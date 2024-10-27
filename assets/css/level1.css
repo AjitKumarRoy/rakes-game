@@ -193,8 +193,8 @@ body {
 }
 
 .home img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     position: absolute;
     transform: translate(-850%, -50%);
     z-index: 5;
@@ -251,6 +251,8 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .woman {
