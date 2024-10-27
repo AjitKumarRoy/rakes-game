@@ -1,0 +1,113 @@
+.level-design-text {
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    /* transform: translateY(50%); */
+    width: 70%;
+    height: 40%;
+    transform: translate(2%, -70%); /* Center the overlay elements */
+    display: flex;     /* Use flexbox to arrange items next to each other */
+    justify-content: center; /* Center children */
+    align-items: center;     /* Center children */
+
+    z-index: 3;
+}
+
+.level-side-design-1 {
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    /* transform: translateY(50%); */
+    width: 20%;
+    height: 20%;
+    transform: translate(25%, -250%); /* Center the overlay elements */
+    display: flex;     /* Use flexbox to arrange items next to each other */
+    justify-content: center; /* Center children */
+    align-items: center;     /* Center children */
+
+    z-index: 3;
+}
+
+.level-side-design-2 {
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    /* transform: translateY(50%); */
+    width: 20%;
+    height: 20%;
+    transform: translate(-25%, -250%); /* Center the overlay elements */
+    display: flex;     /* Use flexbox to arrange items next to each other */
+    justify-content: center; /* Center children */
+    align-items: center;     /* Center children */
+
+    z-index: 3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------
+
+
+.level-design-text {
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    
+    width: 70%;
+    height: 40%;
+    /* transform: translate(2%, -70%);  */
+    display: flex;   
+    justify-content: center;
+    align-items: center;    
+
+    z-index: 5;
+}
+
+.level-side-design-1 {
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    
+    width: 20%;
+    height: 20%;
+    /* transform: translate(25%, -250%);  */
+    display: flex;     
+    justify-content: center; 
+    align-items: center;    
+
+    z-index: 5;
+}
+
+.level-side-design-2 {
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    
+    width: 20%;
+    height: 20%;
+    /* transform: translate(-25%, -250%);  */
+    display: flex;     
+    justify-content: center;
+    align-items: center;    
+
+    z-index: 5;
+}
+

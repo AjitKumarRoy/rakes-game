@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Game</title>
+    <link rel="stylesheet" href="./assets/css/level1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <!-- <h1>Drag and Drop Game</h1> -->
+    <div class="game-board">
+
+
+        <div class="level">
+
+            <button id="toggle-music" class="mute">
+                <span class="icon">
+                    <i class="fa-solid fa-volume-xmark"></i>
+                    <i class="fa-solid fa-volume-high"></i>
+                </span>
+            </button>
+            
+
+            <div class="home">
+                <a href="./index.html" id="home-link">
+                    <img src="./assets/images/Level-1/Home-Button.png" alt="home" width="50px">
+                </a>
+            </div>
+
+            <div class="container3 animate__animated animate__fadeInDown">
+                <img src="./assets/images/Level-1/Level-word-box.png" alt="" class="background3" width="200px">
+
+                <div class="level-design">
+                    <img class="level-side-design-1" src="./assets/images/Level-1/level-word-side-design-01.png" alt=""
+                        width="20px">
+                    <img class="level-design-text" src="./assets/images/Level-1/Level-1-Word-01.png" alt=""
+                        width="140px">
+                    <img class="level-side-design-2" src="./assets/images/Level-1/level-word-side-design-01.png" alt=""
+                        width="20px">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="main-container">
+
+            <div class="questions-answers">
+
+                <!-- Drop zones -->
+                <div id="question" class="question1 container animate__animated animate__fadeInLeft animate__slow">
+
+                    <img src="./assets/images/Level-1/box1.png" alt="" class="background" width="600px">
+
+                    <div class="question">
+                        <img src="./assets/images/Level-1/I-LOVE-TO-READ.png" class="question-text"
+                            alt="i-love-to-read-image">
+                        <!-- <img src="./assets/images/Level-1/BAR.png" class="question-bar" alt="bar"> -->
+                        <div id="dropzone1" class="dropzone"></div>
+                    </div>
+                    <!-- <div id="dropzone2" class="dropzone">Drop Zone 2</div> -->
+
+                </div>
+
+                <!-- Draggable items -->
+                <div class="container2  animate__animated animate__fadeInRight animate__slow">
+
+                    <img src="./assets/images/Level-1/Box2.png" class="background2" alt="" width="600px">
+
+                    <div class="answers">
+
+                        <div class="draggable" draggable="true">
+                            <img id="item2" src="./assets/images/Level-1/soccer-ball.png" alt="item-1"
+                                class="animate__animated animate__bounce animate__slow animate__delay-2s animate__infinite">
+                        </div>
+                        <div class="draggable" draggable="true">
+                            <img id="item1" src="./assets/images/Level-1/Book.png" alt="item-2"
+                                class="animate__animated animate__bounce animate__slow animate__delay-2s animate__infinite">
+                        </div>
+                        <div class="draggable" draggable="true">
+                            <img id="item3" src="./assets/images/Level-1/glass-of-water.png" alt="item-3"
+                                class="animate__animated animate__bounce animate__slow animate__delay-2s animate__infinite">
+                        </div>
+                        <div class="draggable" draggable="true">
+                            <img id="item4" src="./assets/images/Level-1/wristwatch.png" alt="item-4"
+                                class="animate__animated animate__bounce animate__slow animate__delay-2s animate__infinite">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+            <div class="woman animate__animated animate__tada animate__delay-2s animate__infinite ">
+                <img class="" src="./assets/images/Level-1/Female-Character.png" alt="" width="200px">
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <!-- Modal Structure -->
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <h2 id="modalMessage"></h2>
+            <button id="exitButton">Exit</button>
+            <button id="actionButton"></button>
+        </div>
+    </div>
+
+    <!-- Add a hidden overlay for animation effect -->
+    <div id="transition-overlay" class="hidden">
+        <img src="./assets/videos/replay.gif" alt="">
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+    </div>
+
+    <!-- Add a hidden overlay for animation effect -->
+    <div id="transition-overlay2" class="hidden">
+        <img src="./assets/videos/level-up.webp" alt="">
+        <div id="progress-container2">
+            <div id="progress-bar2"></div>
+        </div>
+    </div>
+
+
+
+    <script src="./assets/js/level1.js"></script>
+    <script src="https://kit.fontawesome.com/52fa5f1339.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
