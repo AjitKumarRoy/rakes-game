@@ -73,6 +73,7 @@ const wrongDropSound = new Audio('./assets/sounds/wrong-drop.mp3');
 const levelUpSound = new Audio('./assets/sounds/level-up.mp3');
 const clickSound = new Audio('./assets/sounds/button-click.mp3'); 
 const backgroundMusic = new Audio('./assets/sounds/background-music.mp3'); 
+backgroundMusic.loop = true; // Enable looping
 
 // Set playback rate (1 is normal speed, values higher than 1 are faster)
 dragStartSound.playbackRate = 2;  // 1.5x speed
@@ -82,9 +83,35 @@ levelUpSound.playbackRate = 1.5;
 clickSound.playbackRate = 1.5;
 
 clickSound.volume = 1.0; // Set volume (0.0 to 1.0)
-backgroundMusic.volume = 0.5; // Set volume level (adjust as needed)
-backgroundMusic.loop = true; // Enable looping
-backgroundMusic.play(); // Start playing when the game loads
+
+
+// // Play the background music when the page loads
+// window.onload = () => {
+//     backgroundMusic.play();
+// };
+
+// Function to start the music
+function startBackgroundMusic() {
+    backgroundMusic.volume = 0.5; // Set volume level (adjust as needed)
+    backgroundMusic.play().catch(error => {
+        console.error('Error playing background music:', error);
+    });
+}
+
+// Attach the startBackgroundMusic function to a user interaction
+document.getElementById('start-button').addEventListener('click', () => {
+    startBackgroundMusic();
+});
+
+// Check localStorage for mute state
+if (localStorage.getItem('musicMuted') === 'true') {
+    backgroundMusic.muted = true; // Set music to muted if stored
+} else {
+    // Optionally call startBackgroundMusic here if you have a start button
+    startBackgroundMusic(); 
+    // backgroundMusic.play(); // Play the background music
+    // backgroundMusic.volume = 0.5; // Set volume level (adjust as needed)
+}
 
 const toggleMusicButton = document.getElementById('toggle-music');
 
@@ -92,12 +119,19 @@ const toggleMusicButton = document.getElementById('toggle-music');
 toggleMusicButton.addEventListener('click', () => {
     backgroundMusic.muted = !backgroundMusic.muted;
 
+      // Update localStorage with the current mute state
+      localStorage.setItem('musicMuted', backgroundMusic.muted);
+
     if (backgroundMusic.muted) {
         toggleMusicButton.classList.remove('unmute');
         toggleMusicButton.classList.add('mute');
+        clickSound.play(); // Play sound when muting
+        //backgroundMusic.pause(); // Pause playing
     } else {
         toggleMusicButton.classList.remove('mute');
         toggleMusicButton.classList.add('unmute');
+        clickSound.play(); // Play sound when unmuting
+        startBackgroundMusic(); // Resume playing
     }
 });
 

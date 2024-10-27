@@ -351,23 +351,21 @@ body {
 
 
 #toggle-music {
-    /* Space between text and icon */
     background: none;
     border: none;
     cursor: pointer;
     position: relative;
-    
 }
 
 #toggle-music .icon i {
     display: none; /* Hide both icons initially */
+    transition: opacity 0.3s ease; /* Smooth transition for icon visibility */
 }
 
 /* Show the mute icon when the button has the 'mute' class */
 #toggle-music.mute .fa-volume-xmark {
     display: inline;
     color: red;
-
     font-size: 24px; /* Adjust icon size */
     position: absolute;
     transform: translate(1170%, -50%);
@@ -376,13 +374,19 @@ body {
     padding: 10px;
     border-radius: 50px;
     border: 1px solid white;
+    opacity: 1; /* Ensure icon is visible */
+}
+
+/* Hide the unmute icon when the button has the 'mute' class */
+#toggle-music.mute .fa-volume-high {
+    display: none;
+    opacity: 0; /* Hide unmute icon */
 }
 
 /* Show the unmute icon when the button has the 'unmute' class */
 #toggle-music.unmute .fa-volume-high {
     display: inline;
     color: green;
-
     font-size: 24px; /* Adjust icon size */
     position: absolute;
     transform: translate(1100%, -50%);
@@ -391,4 +395,12 @@ body {
     padding: 10px;
     border-radius: 50px;
     border: 1px solid white;
+    opacity: 1; /* Ensure icon is visible */
 }
+
+/* Hide the mute icon when the button has the 'unmute' class */
+#toggle-music.unmute .fa-volume-xmark {
+    display: none;
+    opacity: 0; /* Hide mute icon */
+}
+
