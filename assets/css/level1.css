@@ -370,7 +370,7 @@ body {
     color: red;
     font-size: 24px; /* Adjust icon size */
     position: absolute;
-    transform: translate(1170%, -50%);
+    transform: translate(1270%, -50%);
     z-index: 5;
     background-color: #FEDE00;
     padding: 10px;
@@ -391,7 +391,7 @@ body {
     color: green;
     font-size: 24px; /* Adjust icon size */
     position: absolute;
-    transform: translate(1100%, -50%);
+    transform: translate(1200%, -50%);
     z-index: 5;
     background-color: #FEDE00;
     padding: 10px;
