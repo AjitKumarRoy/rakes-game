@@ -1,0 +1,310 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-board {
+    /* display: flex;
+    gap: 20px; */
+
+    background-image: url('../images/Level-1/Background.png');
+    padding: 20px;
+
+}
+
+
+
+
+
+
+
+.level  {
+    /* background-color: white; */
+
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}
+
+.container3{
+    position: relative;
+    width: 200px;
+    height: 50px;
+    /* background-color: pink; */
+    display: flex;
+    margin-bottom: 30px;
+}
+
+
+/* home button styles */
+
+
+
+.home {
+    position: relative;
+    
+    /* background-color: #76c7c0; */
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    
+}
+
+.home:hover {
+    animation: vibrate 0.3s ease-in-out;
+    z-index: 99;
+}
+
+@keyframes vibrate {
+    0% { transform: translate(0); }
+    25% { transform: translate(-2px, 2px); }
+    50% { transform: translate(2px, -2px); }
+    75% { transform: translate(-2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+.home img {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    transform: translate(-830%, 20%);
+    z-index: 99;
+
+}
+
+/* //home button styles */
+
+
+
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: pink; */
+    height: 500px;
+    width: auto;
+}
+
+
+
+
+/* Character container styles */
+
+.man-woman {
+    /* background-color: tomato; */
+}
+
+.man-woman img {
+    width: 130px;
+    height: auto;
+    transform: translate(520%, 0);
+}
+
+
+/* //Character container styles */
+
+
+/* You-win container styles */
+.you-win-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* background-color: white; */
+
+    height: 150px;
+    width: auto;
+    margin-bottom: 100px;
+}
+
+.you-win-text {
+    /* background-color: #FEDE00; */
+    width: 600px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    
+}
+
+.you-win-text img {
+    width: 100%;
+    height: auto;
+    scale: 1.7;
+    margin: 0;
+    padding: 0;
+    transform: translate(1.5%, 0);
+}
+
+.you-win-design1, .you-win-design2 {
+    /* background-color: black; */
+    height: 150px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.you-win-design1 img , .you-win-design2 img {
+    width: 100%;
+    height: auto;
+    
+    margin: 0;
+}
+
+.you-win-design2 {
+    rotate: 180deg;
+}
+
+/* //You-win container styles */
+
+
+
+
+
+
+
+/* Mute & Unmute Icon designs */
+
+#toggle-music {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+#toggle-music .icon i {
+    display: none; /* Hide both icons initially */
+    transition: opacity 0.3s ease; /* Smooth transition for icon visibility */
+}
+
+/* Show the mute icon when the button has the 'mute' class */
+#toggle-music.mute .fa-volume-xmark {
+    display: inline;
+    color: red;
+    font-size: 24px; /* Adjust icon size */
+    position: absolute;
+    transform: translate(870%, 30%);
+    z-index: 5;
+    background-color: #FEDE00;
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid white;
+    opacity: 1; /* Ensure icon is visible */
+}
+
+/* Hide the unmute icon when the button has the 'mute' class */
+#toggle-music.mute .fa-volume-high {
+    display: none;
+    opacity: 0; /* Hide unmute icon */
+}
+
+/* Show the unmute icon when the button has the 'unmute' class */
+#toggle-music.unmute .fa-volume-high {
+    display: inline;
+    color: green;
+    font-size: 24px; /* Adjust icon size */
+    position: absolute;
+    transform: translate(820%, 30%);
+    z-index: 5;
+    background-color: #FEDE00;
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid white;
+    opacity: 1; /* Ensure icon is visible */
+}
+
+/* Hide the mute icon when the button has the 'unmute' class */
+#toggle-music.unmute .fa-volume-xmark {
+    display: none;
+    opacity: 0; /* Hide mute icon */
+}
+
+
+
+/*  Credits  Background */
+
+/* Info Button Styles */
+.info-button {
+    /* position: absolute; */
+    /* top: 30px; Adjust as needed */
+    /* left: 30px; Adjust as needed */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff; /* Adjust color */
+    font-size: 34px; /* Adjust size */
+    transform: translate(45%, 900%);
+    z-index: 99;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/credits/Background.png'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    z-index: 1000; /* Make sure it's on top */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content Styles */
+.modal-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Scrolling Image Styles */
+.scrolling-image {
+    width: 70%; /* Image takes 70% of the modal width */
+    position: absolute;
+    bottom: -100%; /* Start from below the modal */
+    animation: scrollImage 10s linear infinite; /* Adjust duration as needed */
+    animation-delay: 2s; /* Add a 2-second delay before animation starts */
+}
+
+/* Animation Keyframes */
+@keyframes scrollImage {
+    0% {
+        bottom: -100%; /* Start position (below modal) */
+    }
+    100% {
+        bottom: 100%; /* End position (above modal) */
+    }
+}
+
+/* Close Button Styles */
+.close-modal {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background: red; /* Adjust color */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001; /* Above modal content */
+}
+
+
+/* // Credits Video Background */
