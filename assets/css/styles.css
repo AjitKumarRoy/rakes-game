@@ -1,0 +1,313 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f4f8;
+  overflow: hidden;
+}
+
+.responsive-container {
+  width: 90%;
+  max-width: 1000px;
+  height: 600px;
+  padding: 20px;
+  border-radius: 8px;
+  background-image: url('../images/Start/Background.png'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  animation: zoomBackground 2s infinite ;
+}
+
+/* Text overlay styling */
+.responsive-container h2, 
+.responsive-container p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animation effect */
+@keyframes zoomBackground {
+  0% {
+    background-size: 100% 100%;
+  }
+  100% {
+    background-size: 135% 135%; /* Adjust zoom level as needed */
+  }
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .responsive-container {
+    padding: 40px;
+  }
+}
+
+
+
+/* main-container styles */
+
+
+.main-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+/* Buttons Styles */
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.find-button {
+    width: 400px;
+    /* background-color: #FEDE00; */
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.find-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.play-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    border-radius: 8px; /* Optional: rounded corners for buttons */
+    overflow: hidden; /* Ensures no content goes outside button boundaries */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    
+}
+
+.exit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    background-color: white;
+    border-radius: 8px; /* Optional: rounded corners for buttons */
+    overflow: hidden; /* Ensures no content goes outside button boundaries */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+}
+
+.play-button a, .exit-button a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #CC6800;
+    border-radius: 8px; /* Optional: rounded corners for buttons */
+    border: 2px solid #f1b67a;
+    padding: 5px 5px;
+}
+
+.play-button a:hover, .exit-button a:hover {
+    border: 2px solid #F47C00;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+} 
+
+.play-button a img, .exit-button a img {
+    width: auto;
+    height: 100%;
+    object-fit: contain; /* Keeps aspect ratio without stretching */
+}
+
+.character-1, .character-2 {
+    /* background-color: black; */
+    margin-top: 320px;
+}
+
+.character-1 img, .character-2 img {
+    width: 200px;
+    height: auto;
+}
+
+/* //Buttons styles */
+
+
+
+/* //main-container styles */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mute & Unmute Icon designs */
+
+#toggle-music {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+#toggle-music .icon i {
+    display: none; /* Hide both icons initially */
+    transition: opacity 0.3s ease; /* Smooth transition for icon visibility */
+}
+
+/* Show the mute icon when the button has the 'mute' class */
+#toggle-music.mute .fa-volume-xmark {
+    display: inline;
+    color: red;
+    font-size: 24px; /* Adjust icon size */
+    position: absolute;
+    transform: translate(870%, -20%);
+    z-index: 5;
+    background-color: #FEDE00;
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid white;
+    opacity: 1; /* Ensure icon is visible */
+}
+
+/* Hide the unmute icon when the button has the 'mute' class */
+#toggle-music.mute .fa-volume-high {
+    display: none;
+    opacity: 0; /* Hide unmute icon */
+}
+
+/* Show the unmute icon when the button has the 'unmute' class */
+#toggle-music.unmute .fa-volume-high {
+    display: inline;
+    color: green;
+    font-size: 24px; /* Adjust icon size */
+    position: absolute;
+    transform: translate(820%, -20%);
+    z-index: 5;
+    background-color: #FEDE00;
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid white;
+    opacity: 1; /* Ensure icon is visible */
+}
+
+/* Hide the mute icon when the button has the 'unmute' class */
+#toggle-music.unmute .fa-volume-xmark {
+    display: none;
+    opacity: 0; /* Hide mute icon */
+}
+
+
+
+/* //Mute & Unmute Icon designs */
+
+
+
+/*  Credits  Background */
+
+/* Info Button Styles */
+.info-button {
+    position: absolute;
+    top: 30px; /* Adjust as needed */
+    left: 30px; /* Adjust as needed */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff; /* Adjust color */
+    font-size: 34px; /* Adjust size */
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/credits/Background.png'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    z-index: 1000; /* Make sure it's on top */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content Styles */
+.modal-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Scrolling Image Styles */
+.scrolling-image {
+    width: 70%; /* Image takes 70% of the modal width */
+    position: absolute;
+    bottom: -100%; /* Start from below the modal */
+    animation: scrollImage 10s linear infinite; /* Adjust duration as needed */
+    animation-delay: 2s; /* Add a 2-second delay before animation starts */
+}
+
+/* Animation Keyframes */
+@keyframes scrollImage {
+    0% {
+        bottom: -100%; /* Start position (below modal) */
+    }
+    100% {
+        bottom: 100%; /* End position (above modal) */
+    }
+}
+
+/* Close Button Styles */
+.close-modal {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background: red; /* Adjust color */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001; /* Above modal content */
+}
+
+
+/* // Credits Video Background */

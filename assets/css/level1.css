@@ -74,16 +74,16 @@ body {
     justify-content: center;
     align-items: center; */
     border: none;
-    border-bottom: 7px solid black;
+    border-bottom: 5px solid black;
 
 
     position: absolute;
     top: 50%;
     left: 50%;
     /* transform: translateY(50%); */
-    width: 18%;
+    width: 22%;
     height: 40%;
-    transform: translate(160%, -70%); /* Center the overlay elements */
+    transform: translate(-160%, -60%); /* Center the overlay elements */
     display: flex;     /* Use flexbox to arrange items next to each other */
     justify-content: center; /* Center children */
     align-items: center;     /* Center children */

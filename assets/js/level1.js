@@ -67,12 +67,12 @@
 
 
 // Load audio files
-const dragStartSound = new Audio('./assets/sounds/drag-start.mp3');
-const correctDropSound = new Audio('./assets/sounds/correct-drop.mp3');
-const wrongDropSound = new Audio('./assets/sounds/wrong-drop.mp3');
-const levelUpSound = new Audio('./assets/sounds/level-up.mp3');
-const clickSound = new Audio('./assets/sounds/button-click.mp3'); 
-const backgroundMusic = new Audio('./assets/sounds/background-music.mp3'); 
+const dragStartSound = new Audio('../sounds/drag-start.mp3');
+const correctDropSound = new Audio('../sounds/correct-drop.mp3');
+const wrongDropSound = new Audio('../sounds/wrong-drop.mp3');
+const levelUpSound = new Audio('../sounds/level-up.mp3');
+const clickSound = new Audio('../sounds/button-click.mp3'); 
+const backgroundMusic = new Audio('../sounds/background-music.mp3'); 
 backgroundMusic.loop = true; // Enable looping
 
 // Set playback rate (1 is normal speed, values higher than 1 are faster)
@@ -200,12 +200,14 @@ function drop(event) {
     draggableElement.style.height = "auto";
 
     // Check for correct drop zone and give visual feedback
+
     if (event.target.id === `dropzone${id.charAt(id.length - 1)}`) {
         //alert(`Correct! ${id} was dropped in the right zone!`);
         correctDropSound.play(); // Play correct sound if item dropped in the right zone
         event.target.style.backgroundColor = "green";
 
-          // Show modal for correct answer after 1 second
+        // Show modal for correct answer after 1 second
+
         setTimeout(() => {
             modalMessage.textContent = `Yuupp! Book is the right anwer.`;
             actionButton.textContent = 'Move to Next Level';
@@ -214,6 +216,15 @@ function drop(event) {
                 // Add any "next level" functionality here
                 transitionToNextLevel(); // Redirect to next level
             };
+
+            exitButton.onclick = () => { 
+                resultModal.style.display = 'none'; 
+                // Add any "next level" functionality here
+                setTimeout(() => {
+                    window.location.href = '../../index.html'; // Redirect after animation
+                }, 200); // Optional short delay before redirecting
+            };
+
             resultModal.style.display = 'flex';
         }, 1000);
 
@@ -223,6 +234,7 @@ function drop(event) {
         event.target.style.backgroundColor = "red";
 
          // Show modal for incorrect answer after 1 second
+
          setTimeout(() => {
             modalMessage.textContent = `No! This is a wrong anwer.`;
             actionButton.textContent = 'Replay';
@@ -231,6 +243,15 @@ function drop(event) {
                 // Add any "replay" functionality here
                 replay();
             };
+
+            exitButton.onclick = () => { 
+                resultModal.style.display = 'none'; 
+                // Add any "next level" functionality here
+                setTimeout(() => {
+                    window.location.href = '../../index.html'; // Redirect after animation
+                }, 200); // Optional short delay before redirecting
+            };
+
             resultModal.style.display = 'flex';
         }, 1000);
     }
@@ -238,6 +259,7 @@ function drop(event) {
 
 
 
+// Redirect to next level
 // Redirect with transition animation
 function transitionToNextLevel() {
     levelUpSound.play(); // Play level up sound
@@ -262,7 +284,7 @@ function transitionToNextLevel() {
         if (progress >= 100) {
             clearInterval(progressInterval); // Stop the interval
             setTimeout(() => {
-                window.location.href = 'next-level.html'; // Redirect after animation
+                window.location.href = './level-2.html'; // Redirect after animation
             }, 200); // Optional short delay before redirecting
         }
     }, interval);
@@ -296,7 +318,7 @@ function replay() {
         if (progress >= 100) {
             clearInterval(progressInterval); // Stop the interval
             setTimeout(() => {
-                window.location.href = 'index.html'; // Redirect after animation
+                window.location.href = './level-1.html'; // Redirect after animation
             }, 200); // Optional short delay before redirecting
         }
     }, interval);
@@ -304,6 +326,7 @@ function replay() {
 }
 
 
+//home button link
 // Get the link and add a click event listener
 document.getElementById('home-link').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent immediate navigation
