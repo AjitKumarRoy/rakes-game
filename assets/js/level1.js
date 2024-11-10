@@ -209,8 +209,8 @@ function drop(event) {
         // Show modal for correct answer after 1 second
 
         setTimeout(() => {
-            modalMessage.textContent = `Yuupp! Book is the right anwer.`;
-            actionButton.textContent = 'Move to Next Level';
+            modalMessage.textContent = `হয়!! এইটোৱেই সঠিক উত্তৰ`;
+            actionButton.textContent = 'পৰৱৰ্তী স্তৰ';
             actionButton.onclick = () => { 
                 resultModal.style.display = 'none'; 
                 // Add any "next level" functionality here
@@ -236,8 +236,8 @@ function drop(event) {
          // Show modal for incorrect answer after 1 second
 
          setTimeout(() => {
-            modalMessage.textContent = `No! This is a wrong anwer.`;
-            actionButton.textContent = 'Replay';
+            modalMessage.textContent = `ভুল উত্তৰ`;
+            actionButton.textContent = 'আকৌ এবাৰ';
             actionButton.onclick = () => { 
                 resultModal.style.display = 'none'; 
                 // Add any "replay" functionality here
